@@ -34,6 +34,71 @@ angular.module('starter', ['ionic', 'ngCordova'])
 
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+    //Wait until the map is loaded, to add the user position and points of interest
+    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+
+        var usermarker = new google.maps.Marker({
+            map: $scope.map,
+            animation: google.maps.Animation.DROP,
+            position: latLng
+        });
+//***********************************************************
+        var icons = {
+         restaurant: {
+           icon: 'icons/restaurant1.png'
+         },
+         beach: {
+           icon: 'icons/beach.png'
+         },
+         bar: {
+           icon:'icons/bar.png'
+         },
+         museum: {
+           icon:'icons/museum.png'
+         }
+        };
+
+        function addMarker(features) {
+           var marker = new google.maps.Marker({
+             position: features.position,
+             icon: icons[features.type].icon,
+             map: $scope.map
+           });
+         }
+
+           var features = [
+                    {
+                      position: new google.maps.LatLng(13.1271672, -59.6334213),
+                      type: 'restaurant'
+                    },{
+                      position: new google.maps.LatLng(13.1399145, -59.6370806),
+                      type: 'restaurant'
+                    },{
+                      position: new google.maps.LatLng(13.1302156, -59.634843),
+                      type: 'beach'
+                    },{
+                      position: new google.maps.LatLng(13.1272037, -59.6281317),
+                      type: 'restaurant'  
+                    }
+                  ];
+
+                  for (var i = 0, feature; feature = features[i]; i++) {
+                        addMarker(feature);
+                      }
+
+
+
+
+
+      /*  var placesMarkers = new google.maps.Marker({
+            map: $scope.map,
+            animation: google.maps.Animation.DROP,
+            position: {lat:13.1271672, lng: -59.6334213},
+            icon: "icons/restaurant1.png"
+          });*/
+
+      });
+
   }, function(error){
     console.log("Could not get location");
   });
