@@ -74,11 +74,30 @@ angular.module('starter', ['ionic', 'ngCordova'])
                       position: new google.maps.LatLng(13.1399145, -59.6370806),
                       type: 'restaurant'
                     },{
+                      position: new google.maps.LatLng(13.1272037, -59.6281317),
+                      type: 'restaurant'
+                    },{
+                      position: new google.maps.LatLng(13.1332681,-59.6326689),
+                      type: 'restaurant'
+                    },{
+                      position: new google.maps.LatLng(13.14239,-59.6372471),
+                      type: 'restaurant'
+                    },{
+                      position: new google.maps.LatLng(13.1569906,-59.6368692),
+                      type: 'restaurant'
+                    },{
                       position: new google.maps.LatLng(13.1302156, -59.634843),
                       type: 'beach'
                     },{
-                      position: new google.maps.LatLng(13.1272037, -59.6281317),
-                      type: 'restaurant'  
+                      position: new google.maps.LatLng(13.1351526,-59.6361387),
+                      type: 'beach'
+                    },{
+                      position: new google.maps.LatLng(13.1220751,-59.6309881),
+                      type: 'beach'                      
+                    },{
+                      position: new google.maps.LatLng(13.0833986,-59.6022015),
+                      type: 'museum'
+
                     }
                   ];
 
